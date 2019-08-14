@@ -1,0 +1,42 @@
+<footer class="site-footer">
+
+  <h2><a href="{{ "/" | relative_url }}">{{ site.title | escape }}</a></h2>
+
+  <ul>
+    <li><span class="icon icon--person">{% include icon-person.svg %}</span>{{ site.author | escape }}</li>
+    <li><span class="icon icon--mail">{% include icon-mail.svg %}</span><a
+        href="mailto:{{ site.email }}">{{ site.email }}</a></li>
+    <li><span class="icon icon--rss">{% include icon-rss.svg %}</span><a
+        href="{{ "/feed.xml" | relative_url }}">RSS-Feed dieser Seite</a></li>
+  </ul>
+
+  <ul>
+    {% if site.github_username %}
+    <li>
+      {% include icon-github.html username=site.github_username %}
+    </li>
+    {% endif %}
+
+    {% if site.youtube_username %}
+    <li>
+      {% include icon-youtube.html username=site.youtube_username channel=site.youtube_channel %}
+    </li>
+    {% endif %}
+
+    {% if site.instagram_username %}
+    <li>
+      {% include icon-instagram.html username=site.instagram_username %}
+    </li>
+    {% endif %}
+
+    {% if site.twitter_username %}
+    <li>
+      {% include icon-twitter.html username=site.twitter_username %}
+    </li>
+    {% endif %}
+  </ul>
+
+  <p>{{ site.description | escape }}</p>
+
+</footer>
+<script src="{{ "/assets/js/LocalTube.js" | relative_url }}"></script>

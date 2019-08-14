@@ -1,0 +1,45 @@
+---
+layout: default
+---
+<div class="home">
+  {% for post in site.posts %}
+
+  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+    {% if forloop.index == 1 %}
+
+    <header class="post-header">
+      {% include post-meta.html date=post.date author=post.author content=post.content %}
+      <a class="post-link" href="{{ post.url | relative_url }}">
+        <h2 class="post-title" itemprop="name headline">{{ post.title | escape }}</h2>
+      </a>
+    </header>
+
+    {{ post.content }}
+
+    {% elsif forloop.index < 8 %}
+
+    <header class="post-header">
+      {% include post-meta.html date=post.date author=post.author content=post.content %}
+      <a class="post-link" href="{{ post.url | relative_url }}">
+        <h2 class="post-title" itemprop="name headline">{{ post.title | escape }}</h2>
+      </a>
+    </header>
+
+    <div class="post-content" itemprop="articleBody">
+      {{ post.excerpt }}
+      <a href="{{ post.url | relative_url }}">weiterlesen…</a>
+    </div>
+
+    {% else %}
+
+    <header class="post-header linkonly">
+      <a class="post-link" href="{{ post.url | relative_url }}">
+        <h2 class="post-title" itemprop="name headline">{{ post.title | escape }}</h2>
+      </a>
+    </header>
+
+    {% endif %}
+  </article>
+
+  {% endfor %}
+</div>
