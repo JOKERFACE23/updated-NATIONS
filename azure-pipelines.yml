@@ -1,7 +1,7 @@
 # Jekyll site
 # Package your Jekyll site using the jekyll/builder Docker container image.
 # Add steps that build, test, save build artifacts, deploy, and more:
-# https://aka.ms/yaml
+# https:///
 
 pool:
   vmImage: 'Ubuntu 16.04'
@@ -9,7 +9,7 @@ pool:
 steps:
 - task: Docker@0
   condition: eq(variables['Build.SourceBranch'], 'refs/heads/master')
-  displayName: 'Run Jekyll (MASTER / PRODUCTION)'
+  displayName: 'LILMACOF231 (MASTER / PRODUCTION)'
   inputs:
     containerRegistryType: 'Container Registry'
     action: 'Run an image'
